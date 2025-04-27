@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Table, Button, Pagination ,Skeleton} from "antd"; // 👈 Pagination import korte hobe
+import { Table, Button, Pagination } from "antd"; 
 import { ColumnsType } from "antd/es/table";
 import { Link } from "react-router-dom";
 import { useGetProductsQuery } from "../api/productApi";
 import { Product } from "../types/product.types";
-import Loader from "./Loader";
 import "../styles/ProductTable.css";
 import ThumbnailLoader from "./ThumbnailLoader";
 import ProductTableSkeleton from "./ProductTableSkeleton";
@@ -59,7 +58,7 @@ const ProductTable: React.FC = () => {
         dataSource={data?.products || []}
         columns={columns}
         rowKey="id"
-        pagination={false} // 👈 Table pagination off kore dilam
+        pagination={false}
       />
       <div style={{ display: "flex", justifyContent: "center", marginTop: 16 }}>
         <Pagination
