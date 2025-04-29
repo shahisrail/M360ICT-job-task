@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Table, Button, Pagination } from "antd"; 
+import { Table, Button, Pagination } from "antd";
 import { ColumnsType } from "antd/es/table";
-import { Link } from "react-router-dom";
-import { useGetProductsQuery } from "../api/productApi";
+import { Link, useNavigate } from "react-router-dom";
+import { useGetProductByIdQuery, useGetProductsQuery } from "../api/productApi";
 import { Product } from "../types/product.types";
 import "../styles/ProductTable.css";
 import ThumbnailLoader from "./ThumbnailLoader";
@@ -11,11 +11,12 @@ import ProductTableSkeleton from "./ProductTableSkeleton";
 const ProductTable: React.FC = () => {
   const [page, setPage] = useState<number>(1);
   const pageSize = 10;
-
+  const navigate = useNavigate();
   const { data, error, isLoading } = useGetProductsQuery({
     limit: pageSize,
     skip: (page - 1) * pageSize,
   });
+ 
 
   const handlePageChange = (page: number) => {
     setPage(page);
@@ -48,6 +49,18 @@ const ProductTable: React.FC = () => {
         <Link to={`/product/${record.id}`}>
           <Button type="primary">View Details</Button>
         </Link>
+      ),
+    },
+    {
+      title: "Edit",
+      key: "edit",
+      render: (_, record) => (
+        <Button
+          type="primary"
+          onClick={() => navigate(`/product/edit/${record.id}`)}
+        >
+          Edit Product
+        </Button>
       ),
     },
   ];
