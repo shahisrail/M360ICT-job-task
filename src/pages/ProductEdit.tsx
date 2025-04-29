@@ -144,7 +144,7 @@ const ProductEdit: React.FC = () => {
             beforeUpload={() => false}
             onChange={(info) => {
               if (info.file.status === "done") {
-                form.setFieldsValue({ thumbnail: info.file.url });
+                form.setFieldsValue({thumbnail: info.file.url });
               }
             }}
           >
@@ -234,7 +234,7 @@ const ProductEdit: React.FC = () => {
         {/* Submit Button */}
         <Form.Item>
           <Button type="primary" htmlType="submit">
-            Submit
+            Update 
           </Button>
         </Form.Item>
       </Form>

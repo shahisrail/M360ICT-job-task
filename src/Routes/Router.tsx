@@ -4,6 +4,7 @@ import Error from "../components/ Error";
 import ProductsPage from "../pages/ProductsPage";
 import ProductDetail from "../pages/ProductDetail";
 import ProductEdit from "../pages/ProductEdit";
+import Notfound from "../components/Notfound";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
         element: <ProductsPage />,
       },
       {
+        path: "/products",
+        element: <ProductsPage />,
+      },
+      {
         path: "/product/:id",
         element: <ProductDetail />,
       },
@@ -23,7 +28,10 @@ const router = createBrowserRouter([
         path: "/product/edit/:id",
         element: <ProductEdit />,
       },
-      
+      {
+        path: "*",
+        element:  <Notfound message='this page is not founded'/>
+      },
     ],
   },
 ]);
