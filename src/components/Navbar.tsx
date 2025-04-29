@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
             Products
           </Link>
           <Link
-            to="/edit-product"
+            to="/aboutUs"
             onClick={handleLinkClick}
             className="text-white hover:text-gray-300"
           >

@@ -5,6 +5,7 @@ import ProductsPage from "../pages/ProductsPage";
 import ProductDetail from "../pages/ProductDetail";
 import ProductEdit from "../pages/ProductEdit";
 import Notfound from "../components/Notfound";
+import AboutUs from "../components/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/product/edit/:id",
         element: <ProductEdit />,
+      },
+      {
+        path: "/aboutUs",
+        element: <AboutUs />,
       },
       {
         path: "*",
