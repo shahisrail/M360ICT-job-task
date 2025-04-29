@@ -45,6 +45,18 @@ export interface Product {
   images: string[];
   thumbnail: string;
 }
+export interface updateProduct {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  price: number;
+  rating: number;
+  stock: number;
+  availabilityStatus: string;
+  reviews: Review[];
+  thumbnail: string;
+}
 
 export interface ProductsResponse {
   products: Product[];
