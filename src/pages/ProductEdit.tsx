@@ -75,6 +75,7 @@ const ProductEdit: React.FC = () => {
     }
 
     try {
+      console.log("Submitting updated product:", updatedProduct);
       await updateProduct(updatedProduct).unwrap()
       notification.success({
         message: "Success",
