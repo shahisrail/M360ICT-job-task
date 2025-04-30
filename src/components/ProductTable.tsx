@@ -2,7 +2,7 @@ import type React from "react";
 import { useState } from "react";
 import { Table, Pagination, Tooltip, Badge, Tag, Space } from "antd";
 import type { ColumnsType } from "antd/es/table";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { EyeOutlined, EditOutlined } from "@ant-design/icons";
 import { useGetProductsQuery } from "../api/productApi";
 import ThumbnailLoader from "./ThumbnailLoader";
@@ -14,7 +14,7 @@ import "../styles/ProductTable.css";
 const ProductTable: React.FC = () => {
   const [page, setPage] = useState<number>(1);
   const pageSize = 10;
-  const navigate = useNavigate();
+
 
   const { data, error, isLoading } = useGetProductsQuery({
     limit: pageSize,
