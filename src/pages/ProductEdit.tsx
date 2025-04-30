@@ -19,6 +19,7 @@ import {
 import { useGetProductByIdQuery, useUpdateProductMutation, useGetCategoriesQuery } from "../api/productApi"
 import type { updateProduct } from "../types/product.types"
 import "../styles/Productedit.css"
+import { Helmet } from "react-helmet"
 
 // Constants for stock status
 const STOCK_STATUS_OPTIONS = [
@@ -103,6 +104,10 @@ const ProductEdit: React.FC = () => {
 
   return (
     <div className="product-edit-container">
+      <Helmet>
+        <title>Product Edit | ProductHub</title>
+        <meta name="description" content="Browse our complete product catalog" />
+      </Helmet>
       <div className="max-w-4xl mx-auto px-4">
         {/* Page Header */}
         <div className="page-header">

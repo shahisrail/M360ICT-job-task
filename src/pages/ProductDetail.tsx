@@ -13,6 +13,7 @@ import {
   StarFilled
 } from "@ant-design/icons"
 import "../styles/ProductDetail.css"
+import { Helmet } from "react-helmet"
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>()
@@ -101,6 +102,10 @@ const ProductDetail: React.FC = () => {
 
   return (
     <div className="product-detail-container">
+      <Helmet>
+        <title>Product Details | ProductHub</title>
+        <meta name="description" content="Browse our complete product catalog" />
+      </Helmet>
       {/* Breadcrumb Navigation */}
       <div className="product-header">
         <Breadcrumb className="product-breadcrumb">
